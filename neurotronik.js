@@ -155,7 +155,6 @@ function updatePreview(content,lastViewBox) {
         $('#preview').css('border-right', '2px solid #1b6181');
         svg = $("svg").svgPanZoom(lastViewBox);
         createReducers()
-        addOptionsShortcuts(model.getModelTree())
         document.getElementById("show-error-message").style.display = "none"
        // document.getElementById('editor').style.backgroundColor = "rgb(0, 0, 0)"
 
@@ -171,17 +170,7 @@ function updatePreview(content,lastViewBox) {
     
 }
 
-function addOptionsShortcuts(model){
-    let shorts = model.getShortcuts().length
-    let svgButtons = ''
-    if (shorts!=0){
-        for (i=0; i<shorts; i++){
-            svgButtons += "<button style='display: grid;' onclick='changeShortcut(" + i + ")'>CLICK TO CURVE SHORTCUT -> " + i + "</button></div>"
-            shortcutsNumber.push(false)
-        }    
-        $('#shortcuts').html(svgButtons)
-    }
-}
+
 
 
 function createReducers(){
